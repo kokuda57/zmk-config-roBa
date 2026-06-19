@@ -12,6 +12,7 @@
 - [ ] スクロール速度 5 の体感確認（速度が合わなければ値を再調整）
 
 ## メモ・決定
-- 2026-06-19 macbookpro: スクロール速度はデフォルト10より遅くしたいとのことで5を選択。ZMK_POINTING_DEFAULT_SCRL_VAL は roBa_R.conf（Central側・トラックボール側）に CONFIG_ プレフィックスで追記する
-- ビルド結果URL: https://github.com/kokuda57/zmk-config-roBa/actions/runs/27807921675
+- 2026-06-19 macbookpro: ZMK_POINTING_DEFAULT_SCRL_VAL は v0.3-branch では未定義シンボルのためビルドエラーになる。代わりに CONFIG_PMW3610_SCROLL_TICK で調整する（値を大きくするほど遅くなる）
+- 2026-06-19 macbookpro: SCROLL_TICK=16（デフォルト）→ 32 に変更。1スクロールに必要なトラックボール移動量が2倍になり速度が半分になる
 - 書き込み順序: settings_reset（両方）→ roBa_R → roBa_L
+- 最新ビルドURL: https://github.com/kokuda57/zmk-config-roBa/actions/runs/27808759381
