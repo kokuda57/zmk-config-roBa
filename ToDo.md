@@ -5,6 +5,7 @@
 
 ## 完了
 - [x] トラックボール移動での自動レイヤー切替を無効化（automouse-layer 4→-1, roBa.keymap:12）。誤クリック対策。クリック手段は別途用意済みのため automouse 不要。commit 13b8b49 / origin/main push 済み / 右手 roBa_R 書き込み完了 <!-- 2026-06-21 macmini -->
+- [x] 設定変更の標準手順を CLAUDE.md にルール化（新規作成）。commit 618878b / push 済み <!-- 2026-06-21 macmini -->
 - [x] エンコーダ default 層を矢印キー行スクロール(&inc_dec_kp UP_ARROW DOWN_ARROW, triggers-per-rotation=10)へ変更し実機で「完璧」確認。commit dc859cb / 右手(roBa_R)書き込み済み <!-- 2026-06-20 macbookpro -->
 - [x] エンコーダのページ送り行き過ぎ対策: triggers-per-rotation を 10→5 に変更（roBa.dtsi:112）→ commit a5918b4 / origin/main へ push 済み <!-- 2026-06-20 macbookpro -->
 - [x] ロータリーエンコーダのスクロール速度を遅くする方法を検討・実装 <!-- 2026-06-20 macbookpro -->
