@@ -1,9 +1,10 @@
 # ToDo
 
 ## 進行中 / 未完了
-（なし）
+- [ ] トラックボール自動マウスレイヤー無効化を実機反映（push → ビルド → 右手 roBa_R へ書き込み）<!-- 2026-06-21 macmini -->
 
 ## 完了
+- [x] トラックボール移動での自動レイヤー切替を無効化（automouse-layer 4→-1, roBa.keymap:12）。誤クリック対策。クリック手段は別途用意済みのため automouse 不要 <!-- 2026-06-21 macmini -->
 - [x] エンコーダ default 層を矢印キー行スクロール(&inc_dec_kp UP_ARROW DOWN_ARROW, triggers-per-rotation=10)へ変更し実機で「完璧」確認。commit dc859cb / 右手(roBa_R)書き込み済み <!-- 2026-06-20 macbookpro -->
 - [x] エンコーダのページ送り行き過ぎ対策: triggers-per-rotation を 10→5 に変更（roBa.dtsi:112）→ commit a5918b4 / origin/main へ push 済み <!-- 2026-06-20 macbookpro -->
 - [x] ロータリーエンコーダのスクロール速度を遅くする方法を検討・実装 <!-- 2026-06-20 macbookpro -->
@@ -26,4 +27,5 @@
 - 2026-06-20 macbookpro: default層エンコーダを &encoder_scroll（zmk,behavior-sensor-rotate, bindings=<&msc SCRL_UP>,<&msc SCRL_DOWN>）へ変更。pointing.h は既にinclude済・ZMK_POINTING=y。ARROW層の LC(PAGE_UP/DOWN)（タブ移動）は維持。スクロール量調整ノブ: triggers-per-rotation（多→少で量減）＋ Mac のホイール速度。方向が逆なら SCRL_UP/DOWN を入替
 - 2026-06-20 macbookpro: &msc(マウススクロール)はエンコーダと相性が悪い。時間ベース(押下中スクロール継続)のため、sensor-rotate tap-ms=5msで無反応・30msで暴走（押しっぱなし扱い）。安定窓が狭く実用困難。→ msc方式は見切った。（参考: SCRL_UP=MOVE_Y(10)で量はゼロではない、zmk,behavior-sensor-rotate は v0.3に存在）
 - 2026-06-20 macbookpro: 「1ノッチ1/3ページ」厳密はキーボード側で不可（1ページの行数がアプリ/ウィンドウ依存）。近似のみ。採用: 矢印キー行スクロール &inc_dec_kp UP_ARROW DOWN_ARROW（離散keypressで確実・暴走なし）。1ノッチの行数は triggers-per-rotation で調整、足りなければ1トリガ複数行のマクロ化
+- 2026-06-21 macmini: トラックボール automouse-layer を無効化(`<4>`→`<(-1)>`)。原因=入力中の微振動で MOUSE 層へ即切替し J=MB1/K=MB3/L=MB2 が誤クリック。超高感度設定が主因（roBa_R.conf: MOVEMENT_THRESHOLD=0, AUTOMOUSE_TIMEOUT_MS=700）。-1 でドライバの `#if AUTOMOUSE_LAYER > 0` ガードに掛かり完全無効。MOUSE層(4)は他に到達キーが無いがクリック手段は別途用意済みのため問題なし。トラックボール駆動は右手=セントラルなので【右手 roBa_R へ書き込む】必要あり
 - 現在のリポジトリ状態: default層エンコーダ=矢印キー行スクロール(&inc_dec_kp UP_ARROW DOWN_ARROW), triggers-per-rotation=10（commit dc859cb push 済み）。ARROW層は LC(PAGE_UP/DOWN) 維持。それ以外は upstream と同一（SCROLL_TICK=16）

@@ -9,7 +9,7 @@
 };
 
 &trackball {
-    automouse-layer = <4>;
+    automouse-layer = <(-1)>;  // disabled: トラックボール移動での自動レイヤー切替を無効化（誤クリック防止）
     scroll-layers = <5>;
 
     // arrows {
