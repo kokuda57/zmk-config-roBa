@@ -43,4 +43,4 @@ kumamuk-git/zmk-config-roBa の fork（`kokuda57/zmk-config-roBa`）。XIAO BLE 
 
 - author: `kokuda57` / `k.okuda57@gmail.com`、gh active: `kokuda57`
 - push は明示指示時のみ。`--no-verify`・`--amend` は明示指示時のみ
-- セッション跨ぎの状態・決定は `ToDo.md` に記録（グローバル CLAUDE.md 準拠）
+- セッション跨ぎの状態・決定は `ToDo.md` に記録（グローバルルール準拠）
