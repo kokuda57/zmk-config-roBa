@@ -41,6 +41,4 @@ kumamuk-git/zmk-config-roBa の fork（`kokuda57/zmk-config-roBa`）。XIAO BLE 
 
 ## Git
 
-- author: `kokuda57` / `k.okuda57@gmail.com`、gh active: `kokuda57`
-- push は明示指示時のみ。`--no-verify`・`--amend` は明示指示時のみ
-- セッション跨ぎの状態・決定は `ToDo.md` に記録（グローバルルール準拠）
+- gh の active アカウント: `kokuda57`（違っていたら `gh auth switch --user kokuda57`。`kyosuke-lab` は DevProjects 外の作業専用）
