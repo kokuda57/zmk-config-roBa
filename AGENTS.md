@@ -38,7 +38,3 @@ kumamuk-git/zmk-config-roBa の fork（`kokuda57/zmk-config-roBa`）。XIAO BLE 
 - `ZMK_POINTING_DEFAULT_SCRL_VAL` は v0.3-branch で未定義シンボル → ビルドエラー。スクロール速度は `CONFIG_PMW3610_SCROLL_TICK`（大きいほど遅い）で調整
 - PMW3610 ドライバ（kumamuk-git/zmk-pmw3610-driver）の automouse 関連プロパティは `automouse-layer` / `scroll-layers` / `snipe-layers` のみ。typing-idle ガードは無い。感度は `CONFIG_PMW3610_MOVEMENT_THRESHOLD`（大きいほど鈍感、0=即時）・`CONFIG_PMW3610_AUTOMOUSE_TIMEOUT_MS`（層の居座り時間）で調整。`automouse-layer = <(-1)>` で完全無効
 - `&msc`（マウススクロール）はエンコーダと相性が悪い（時間ベースで暴走しやすい）。離散スクロールは `&inc_dec_kp` を使う
-
-## Git
-
-- gh の active アカウント: `kokuda57`（違っていたら `gh auth switch --user kokuda57`。`kyosuke-lab` は DevProjects 外の作業専用）
